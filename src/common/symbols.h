@@ -31,8 +31,7 @@ EXTERN_C BOOL
 GetSymFromAddr(HANDLE hProcess, DWORD64 dwAddress, LPSTR lpSymName, DWORD nSize);
 
 EXTERN_C BOOL
-GetLineFromAddr(HANDLE hProcess,
-                DWORD64 dwAddress,
-                LPSTR lpFileName,
-                DWORD nSize,
-                LPDWORD lpLineNumber);
+GetSymFromAddrWithOffset (HANDLE hProcess, DWORD64 dwAddress, LPSTR lpSymName, DWORD nSize, LPDWORD lpOffsetAddr );
+
+EXTERN_C BOOL
+GetLineFromAddr (HANDLE hProcess, DWORD64 dwAddress, LPSTR lpFileName, DWORD nSize, LPDWORD lpLineNumber );

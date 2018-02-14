@@ -9,7 +9,7 @@ include_directories (
 
 add_subdirectory (common)
 add_subdirectory (mgwhelp)
-add_subdirectory (drmingw)
+#add_subdirectory (drmingw)
 add_subdirectory (exchndl)
-add_subdirectory (addr2line)
-add_subdirectory (catchsegv)
+#add_subdirectory (addr2line)
+#add_subdirectory (catchsegv)
