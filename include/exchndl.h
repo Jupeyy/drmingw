@@ -27,7 +27,7 @@
 // Must be called when exchndll.dll is statically loaded (as opposed to loaded
 // dynamically via LoadLibrary)
 EXTERN_C VOID APIENTRY
-ExcHndlInit(void);
+ExcHndlInit(VOID*);
 
 
 // Override the report file name.

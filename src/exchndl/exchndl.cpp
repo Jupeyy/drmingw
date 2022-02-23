@@ -41,6 +41,8 @@ static std::string g_szLogFileName;
 static HANDLE g_hReportFile = nullptr;
 static BOOL g_bOwnReportFile = FALSE;
 
+static void* g_pOffsetEntry = nullptr;
+
 static void
 writeReport(const char *szText)
 {
@@ -76,7 +78,7 @@ GenerateExceptionReport(PEXCEPTION_POINTERS pExceptionInfo)
                    _countof(szDateStr));
     char szTimeStr[128];
     GetTimeFormatA(Locale, 0, &SystemTime, "HH':'mm':'ss", szTimeStr, _countof(szTimeStr));
-    lprintf("Error occurred on %s at %s.\n\n", szDateStr, szTimeStr);
+    lprintf("Error occurred on %s at %s. (with offset %p)\n\n", szDateStr, szTimeStr, g_pOffsetEntry);
 
     HANDLE hProcess = GetCurrentProcess();
 
@@ -241,8 +243,9 @@ CleanupHandler(void)
 
 
 VOID APIENTRY
-ExcHndlInit(void)
+ExcHndlInit(VOID* pVal)
 {
+    g_pOffsetEntry = pVal;
     SetupHandler();
 }
 

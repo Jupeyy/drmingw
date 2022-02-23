@@ -23,7 +23,7 @@ struct Class {
 };
 
 int main() {
-    ExcHndlInit();
+    //ExcHndlInit();
     Class instance;
     instance.Method();
     return 0;
