@@ -145,8 +145,8 @@ set (MGWHELP_IMPLIB ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}/libmgwhelp.a)
 set (EXCHNDL_IMPLIB ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}/libexchndl.a)
 
 add_subdirectory (src)
-add_subdirectory (sample)
-add_subdirectory (tests)
+#add_subdirectory (sample)
+#add_subdirectory (tests)
 
 
 ##############################################################################
